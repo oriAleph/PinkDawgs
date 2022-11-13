@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF050D7429212FC20070C5E7 /* Splash_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF050D7329212FC20070C5E7 /* Splash_Screen.swift */; };
 		FF1EC68528FC8316003CA9C5 /* Show_All.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1EC68428FC8316003CA9C5 /* Show_All.swift */; };
 		FF1EC68728FC8AB0003CA9C5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1EC68628FC8AB0003CA9C5 /* Search.swift */; };
 		FF211C9328F89E9D0043B5E8 /* LEGO_Brick_FinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF211C9228F89E9D0043B5E8 /* LEGO_Brick_FinderApp.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF050D7329212FC20070C5E7 /* Splash_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash_Screen.swift; sourceTree = "<group>"; };
 		FF1EC68428FC8316003CA9C5 /* Show_All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show_All.swift; sourceTree = "<group>"; };
 		FF1EC68628FC8AB0003CA9C5 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		FF211C8F28F89E9C0043B5E8 /* LEGO Brick Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LEGO Brick Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				FF211C9228F89E9D0043B5E8 /* LEGO_Brick_FinderApp.swift */,
+				FF050D7329212FC20070C5E7 /* Splash_Screen.swift */,
 				FF211C9428F89E9D0043B5E8 /* ContentView.swift */,
 				FFF8B22528FB2193005EA167 /* Capture_Image.swift */,
 				FFF8B22728FB2F25005EA167 /* Upload_Image.swift */,
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFF8B22E28FB440E005EA167 /* Result_Screen.swift in Sources */,
+				FF050D7429212FC20070C5E7 /* Splash_Screen.swift in Sources */,
 				FFF8B22828FB2F25005EA167 /* Upload_Image.swift in Sources */,
 				FFF8B22628FB2193005EA167 /* Capture_Image.swift in Sources */,
 				FF211C9528F89E9D0043B5E8 /* ContentView.swift in Sources */,

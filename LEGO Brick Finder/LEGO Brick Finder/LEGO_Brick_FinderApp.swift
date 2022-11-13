@@ -11,7 +11,7 @@ import SwiftUI
 struct LEGO_Brick_FinderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 }
