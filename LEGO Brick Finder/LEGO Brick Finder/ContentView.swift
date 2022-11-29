@@ -78,10 +78,10 @@ struct ContentView: View {
                         .padding([.bottom], 66)
                     }
                     
-                    NavigationLink(destination: Show_All_View())
+                    NavigationLink(destination: About())
                     {
                         HStack {
-                            Text("Glossary")
+                            Text("About")
                                 .padding([.leading], 50)
                             Image("File")
                                 .renderingMode(.original)
