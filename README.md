@@ -30,7 +30,7 @@ Xcode 13.0 or above
 Valid Apple Developer ID
 Xcode command-line tools 
 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to manage Xcode library dependencies (run `sudo gem install cocoapods`)
-A device with iOS 12.0 or above to test the camera feature. If not available, then use one of the iPhone simulators.
+<br /> A device with iOS 12.0 or above to test the camera feature. If not available, then use one of the iPhone simulators.
 <br /> <br />
 
 #### ~ Coding Notebooks ~
@@ -40,7 +40,7 @@ Install any dependencies asked for when running the Installation and Import sect
 
 ### Build and Run
 
-1. Clone this GitHub repository: `git clone https://github.com/oriAleph/PinkDawgs.git`
+1. Clone this GitHub repository: `git clone https://github.com/oriAleph/PinkDawgs.git` and `cd PinkDawgs`
 2. Install the pod to generate the workspace file: `cd LEGO\ Brick\ Finder && pod install`
 3. Open the project in Xcode with this command: `open LEGO\ Brick\ Finder.xcworkspace`
 4. Select the `LEGO Brick Finder` project and under the `Signing & Capabilities` section select development team.
