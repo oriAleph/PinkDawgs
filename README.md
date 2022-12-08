@@ -3,7 +3,6 @@
 >The purpose of this project is to develop an iOS application that can make it easier for someone who is visually impaired to identify the type and color of an individual LEGO brick that they might need for their LEGO set/project.
 <br /> <br />
 
-**Note: update link when merged into main**
 ![image](https://github.com/oriAleph/PinkDawgs/blob/main/demo.png)
 <br /> <br />
 
