@@ -4,7 +4,7 @@
 <br /> <br />
 
 **Note: update link when merged into main**
-![image](https://github.com/oriAleph/PinkDawgs/blob/Ori/demo.png)
+![image](https://github.com/oriAleph/PinkDawgs/blob/main/demo.png)
 <br /> <br />
 
 ## Table of Contents
