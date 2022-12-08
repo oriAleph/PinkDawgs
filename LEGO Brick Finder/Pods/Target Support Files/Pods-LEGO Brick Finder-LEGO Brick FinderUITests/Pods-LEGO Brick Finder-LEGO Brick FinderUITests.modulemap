@@ -1,0 +1,6 @@
+framework module Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests {
+  umbrella header "Pods-LEGO Brick Finder-LEGO Brick FinderUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

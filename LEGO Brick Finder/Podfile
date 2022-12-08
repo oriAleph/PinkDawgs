@@ -1,0 +1,20 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '16.0'
+
+target 'LEGO Brick Finder' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  pod 'TensorFlowLiteTaskVision'
+
+  # Pods for LEGO Brick Finder
+
+  target 'LEGO Brick FinderTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'LEGO Brick FinderUITests' do
+    # Pods for testing
+  end
+
+end
