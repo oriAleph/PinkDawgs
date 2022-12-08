@@ -31,11 +31,12 @@ Valid Apple Developer ID
 Xcode command-line tools 
 [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to manage Xcode library dependencies (run `sudo gem install cocoapods`)
 <br /> A device with iOS 12.0 or above to test the camera feature. If not available, then use one of the iPhone simulators.
+<br /> If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f)
 <br /> <br />
 
 #### ~ Coding Notebooks ~
 Google Colab is preferred
-Install any dependencies asked for when running the Installation and Import sections
+<br />Install any dependencies asked for when running the Installation and Import sections
 <br /> <br /> <br /> <br /> 
 
 ### Build and Run
@@ -57,7 +58,7 @@ Install any dependencies asked for when running the Installation and Import sect
 
 * [Object Detection](https://machinelearningmastery.com/object-recognition-with-deep-learning/) is the process of finding the location of multiple objects in an image. To build an object detection model, you will need an annotated dataset containing the objects and their coordinate positions. 
 
-* For this project, an image classification model was used *to identify one LEGO brick at a time* within a given image. If you would like to recognize multiple bricks in a given image, I recommend using an object detection model instead.
+* For this project, an image classification model was used *to identify one LEGO brick at a time* within a given image. If you want to recognize multiple bricks in a given image, I recommend using an object detection model instead.
 
 * To create a model that classifies LEGO brick images, a pre-trained machine learning model was leveraged to perform [transfer learning](https://machinelearningmastery.com/how-to-use-transfer-learning-when-developing-convolutional-neural-network-models/) by applying it to the LEGO dataset. There are trade-offs based on performance, accuracy, and model size when deciding which model architecture to use for training. While we do want an efficient model, the most important aspect of this project is the accuracy of the predictions since we want to provide successful user accessibility.
 
