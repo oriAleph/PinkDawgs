@@ -20,39 +20,50 @@ import SwiftUI
 import UIKit
 
 
-/// A result from the `Classifications`
+/// A result from the `Classifications`.
 struct ImageClassificationResult {
-    let inferenceTime: Double
-    let classifications: Classifications
+  let inferenceTime: Double
+  let classifications: Classifications
 }
 
+/// Model file information
+typealias FileInfo = (name: String, extension: String)
 
-func Inference(imageName: String) -> ImageClassificationResult? {
-    
-    // MARK: - Model Parameters
-    
-    /// TensorFlow Lite `Interpreter` object for performing inference on a given model.
-    var classifier: ImageClassifier
-    
-    /// Information about the alpha component in RGBA data.
-    //let alphaComponent = (baseOffset: 4, moduloRemainder: 3)
-    
-    // MARK: - Initialization
-    
-    /// Construct the path to the model file.
-    let modelName = "model"
+/// This class handles all data preprocessing and makes calls to run inference on a given frame
+/// by invoking the TFLite `ImageClassifier`. It then returns the top N results for a successful
+/// inference.
+class ImageClassificationHelper {
+
+  // MARK: - Model Parameters
+
+  /// TensorFlow Lite `Interpreter` object for performing inference on a given model.
+  private var classifier: ImageClassifier
+
+  /// Information about the alpha component in RGBA data.
+  private let alphaComponent = (baseOffset: 4, moduloRemainder: 3)
+
+  // MARK: - Initialization
+
+  /// A failable initializer for `ClassificationHelper`. A new instance is created if the model and
+  /// labels files are successfully loaded from the app's main bundle. Default `threadCount` is 1.
+  init?(modelFileInfo: FileInfo, threadCount: Int, resultCount: Int, scoreThreshold: Float) {
+    let modelFilename = modelFileInfo.name
+    // Construct the path to the model file.
     guard
-        let modelPath = Bundle.main.path(forResource: modelName, ofType: "tflite")
+      let modelPath = Bundle.main.path(
+        forResource: modelFilename,
+        ofType: modelFileInfo.extension
+      )
     else {
-        print("Failed to load the model file with name: \(modelName).")
-        return nil
+      print("Failed to load the model file with name: \(modelFilename).")
+      return nil
     }
-    
-    /// Configure initialization options.
+
+    // Configures the initialization options.
     let options = ImageClassifierOptions(modelPath: modelPath)
-    options.classificationOptions.maxResults = 3
-    options.baseOptions.computeSettings.cpuSettings.numThreads = Int(Int32(4))
-    options.classificationOptions.scoreThreshold = 0.2
+    options.baseOptions.computeSettings.cpuSettings.numThreads = Int(Int32(threadCount))
+    options.classificationOptions.maxResults = resultCount
+    options.classificationOptions.scoreThreshold = scoreThreshold
 
     do {
       classifier = try ImageClassifier.classifier(options: options)
@@ -60,112 +71,42 @@ func Inference(imageName: String) -> ImageClassificationResult? {
       print("Failed to create the interpreter with error: \(error.localizedDescription)")
       return nil
     }
-    
-    // MARK: - Internal Methods
+  }
 
-    /// Convert the input image to MLImage
-    guard let image = UIImage (named: imageName), let mlImage = MLImage(image: image)
-    else { return nil }
-    
-    /// Run inference using the `ImageClassifier` object.
-    do {
-      let startDate = Date()
-      /// Run inference
-      let classificationResults = try classifier.classify(mlImage: mlImage)
-      let inferenceTime = Date().timeIntervalSince(startDate) * 1000
-
-      /// A single-head model gets the classification result from the first (and only) classification head
-      guard let classifications = classificationResults.classifications.first
-      else { return nil }
-        
-      /// Return inference information
-      return ImageClassificationResult(
-        inferenceTime: inferenceTime, classifications: classifications)
-    
-    } catch let error {
-      print("Failed to invoke the interpreter with error: \(error.localizedDescription)")
-      return nil
-    }
-    
-}
+  // MARK: - Internal Methods
 
 
-func FormatResults(row: Int) -> (String, String) {
-    
-    var fieldName: String = ""
-    var info: String = ""
-    
-    let inferenceResult = Inference(imageName: "IMG_0676.jpg")
-    
-    guard let tempResult = inferenceResult, tempResult.classifications.categories.count > 0
-    else {
-        if row == 1 {
-            fieldName = "No Results"
-            info = ""
-        } else {
-            fieldName = ""
-            info = ""
+  /// Performs image preprocessing, invokes the `ImageClassifier`, and processes the inference
+  /// results.
+
+  // func classify(frame pixelBuffer: CVPixelBuffer) -> ImageClassificationResult? {
+  // Convert the `CVPixelBuffer` object to an `MLImage` object.
+  // guard let mlImage = MLImage(pixelBuffer: pixelBuffer) else { return nil }
+      
+   func classify() -> ImageClassificationResult? {
+       
+       /// Convert the input image to MLImage
+       guard let image = UIImage (named: "IMG_0676.jpeg"), let mlImage = MLImage(image: image) else { return nil }
+       
+       // Run inference using the `ImageClassifier{ object.
+        do {
+          let startDate = Date()
+          let classificationResults = try classifier.classify(mlImage: mlImage)
+          let inferenceTime = Date().timeIntervalSince(startDate) * 1000
+
+          // As all models used in this sample app are single-head models, gets the classification
+          // result from the first (and only) classification head and return to the view controller to
+          // display.
+          guard let classifications = classificationResults.classifications.first else { return nil }
+          return ImageClassificationResult(
+            inferenceTime: inferenceTime, classifications: classifications)
+        } catch let error {
+          print("Failed to invoke the interpreter with error: \(error.localizedDescription)")
+          return nil
         }
-        return (fieldName, info)
-    }
-    
-    if row < tempResult.classifications.categories.count {
-    let category = tempResult.classifications.categories[row]
-    fieldName = category.label ?? ""
-    info = String(format: "%.2f", category.score * 100.0) + "%"
-    } else {
-    fieldName = ""
-    info = ""
-    }
-
-  return (fieldName, info)
+  }
 }
 
-
-// For additional inference information ->
-
-enum InferenceInfo: Int, CaseIterable {
-    case Resolution
-    case InferenceTime
-    
-    func displayString() -> String {
-        var toReturn = ""
-        switch self {
-        case .Resolution:
-            toReturn = "Resolution"
-        case .InferenceTime:
-            toReturn = "Inference Time"
-        }
-        return toReturn
-    }
-}
-
-
-func FormatInfo(row: Int) -> (String, String) {
-    let inferenceResult: ImageClassificationResult? = nil
-    let resolution = CGSize.zero
-    
-    var fieldName: String = ""
-    var info: String = ""
-    
-    guard let inferenceInfo = InferenceInfo(rawValue: row) else {
-        return (fieldName, info)
-    }
-    
-    fieldName = inferenceInfo.displayString()
-    
-    switch inferenceInfo {
-    case .Resolution:
-        info = "\(Int(resolution.width))x\(Int(resolution.height))"
-    case .InferenceTime:
-        guard let finalResults = inferenceResult else {
-            info = "0ms"
-            break
-        }
-        info = String(format: "%.2fms", finalResults.inferenceTime)
-    }
-    return (fieldName, info)
-}
 
 
 
