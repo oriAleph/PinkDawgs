@@ -124,16 +124,25 @@ class Image_Processing {
         
         guard imageClassificationHelper?.classify(Name: img_path) != nil
         else { fatalError("Model classification failed.") }
-        
+    
         let result = imageClassificationHelper?.classify(Name: img_path)
         
         var fieldName: String = ""
         var info: String = ""
         
-        guard let category = result?.classifications.categories[1]
+        
+        guard let count = result?.classifications.categories.count, count > 1
+        else {
+            fieldName = "No Results"
+            info = "N/A"
+            return (fieldName, info)
+        }
+        
+        guard let category = result?.classifications.categories[2]
         else {
             fatalError("Failed to extract results")
         }
+        
         
         fieldName = category.label ?? ""
         info = String(format: "%.2f", category.score * 100.0) + "%"
@@ -148,7 +157,7 @@ class Image_Processing {
 
 // MARK: Default Constants
 enum DefaultConstants {
-  static let maxResults = 3
+  static let maxResults = 1
   static let scoreThreshold: Float = 0.2
   static let model: ModelType = .model
 }
