@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2457403229488D7900F4DB62 /* efficientnet_lite3.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 2457402C29488D7900F4DB62 /* efficientnet_lite3.tflite */; };
+		2457403429488D7900F4DB62 /* efficientnet_lite1.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 2457402E29488D7900F4DB62 /* efficientnet_lite1.tflite */; };
+		2457403529488D7900F4DB62 /* efficientnet_lite4.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 2457402F29488D7900F4DB62 /* efficientnet_lite4.tflite */; };
+		2457403629488D7900F4DB62 /* efficientnet_lite2.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 2457403029488D7900F4DB62 /* efficientnet_lite2.tflite */; };
+		2457403729488D7900F4DB62 /* efficientnet_lite0.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 2457403129488D7900F4DB62 /* efficientnet_lite0.tflite */; };
 		24DC78AB29429AED00093040 /* IMG_0676.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 24DC78AA29429AED00093040 /* IMG_0676.jpeg */; };
 		24DC78AD29429B0900093040 /* model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 24DC78AC29429B0900093040 /* model.tflite */; };
 		54CC2EC931B6E922908992D9 /* Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153BA881C5F98F881E218796 /* Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework */; };
@@ -49,6 +54,11 @@
 		14C59221CE7CCC4FDAB33410 /* Pods-LEGO Brick Finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEGO Brick Finder.release.xcconfig"; path = "Target Support Files/Pods-LEGO Brick Finder/Pods-LEGO Brick Finder.release.xcconfig"; sourceTree = "<group>"; };
 		153BA881C5F98F881E218796 /* Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		239809454ADB6CB55403013F /* Pods-LEGO Brick Finder-LEGO Brick FinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEGO Brick Finder-LEGO Brick FinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-LEGO Brick Finder-LEGO Brick FinderUITests/Pods-LEGO Brick Finder-LEGO Brick FinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2457402C29488D7900F4DB62 /* efficientnet_lite3.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = efficientnet_lite3.tflite; sourceTree = "<group>"; };
+		2457402E29488D7900F4DB62 /* efficientnet_lite1.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = efficientnet_lite1.tflite; sourceTree = "<group>"; };
+		2457402F29488D7900F4DB62 /* efficientnet_lite4.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = efficientnet_lite4.tflite; sourceTree = "<group>"; };
+		2457403029488D7900F4DB62 /* efficientnet_lite2.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = efficientnet_lite2.tflite; sourceTree = "<group>"; };
+		2457403129488D7900F4DB62 /* efficientnet_lite0.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = efficientnet_lite0.tflite; sourceTree = "<group>"; };
 		24DC78AA29429AED00093040 /* IMG_0676.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0676.jpeg; sourceTree = "<group>"; };
 		24DC78AC29429B0900093040 /* model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = model.tflite; sourceTree = "<group>"; };
 		38A631D4D7AB106C28AE628F /* Pods-LEGO Brick Finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEGO Brick Finder.debug.xcconfig"; path = "Target Support Files/Pods-LEGO Brick Finder/Pods-LEGO Brick Finder.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +124,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2457402B29488D7900F4DB62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				24DC78AC29429B0900093040 /* model.tflite */,
+				2457403129488D7900F4DB62 /* efficientnet_lite0.tflite */,
+				2457402E29488D7900F4DB62 /* efficientnet_lite1.tflite */,
+				2457403029488D7900F4DB62 /* efficientnet_lite2.tflite */,
+				2457402C29488D7900F4DB62 /* efficientnet_lite3.tflite */,
+				2457402F29488D7900F4DB62 /* efficientnet_lite4.tflite */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57806C8D8E70E09C9936520E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +184,7 @@
 				FF1EC68428FC8316003CA9C5 /* Show_All.swift */,
 				FFF8B22D28FB440E005EA167 /* Result_Screen.swift */,
 				FFF8B22928FB4152005EA167 /* Image_Processing.swift */,
-				24DC78AC29429B0900093040 /* model.tflite */,
+				2457402B29488D7900F4DB62 /* Models */,
 				24DC78AA29429AED00093040 /* IMG_0676.jpeg */,
 				FF211C9628F89E9E0043B5E8 /* Assets.xcassets */,
 				FF211C9828F89E9E0043B5E8 /* Preview Content */,
@@ -302,9 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				24DC78AB29429AED00093040 /* IMG_0676.jpeg in Resources */,
+				2457403229488D7900F4DB62 /* efficientnet_lite3.tflite in Resources */,
+				2457403629488D7900F4DB62 /* efficientnet_lite2.tflite in Resources */,
 				FF211C9A28F89E9E0043B5E8 /* Preview Assets.xcassets in Resources */,
+				2457403729488D7900F4DB62 /* efficientnet_lite0.tflite in Resources */,
 				FF211C9728F89E9E0043B5E8 /* Assets.xcassets in Resources */,
 				24DC78AD29429B0900093040 /* model.tflite in Resources */,
+				2457403429488D7900F4DB62 /* efficientnet_lite1.tflite in Resources */,
+				2457403529488D7900F4DB62 /* efficientnet_lite4.tflite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

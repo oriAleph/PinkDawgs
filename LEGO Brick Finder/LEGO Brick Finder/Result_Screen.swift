@@ -21,7 +21,14 @@ struct Result_View: View {
                 Text("Name:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
-                Text("(Insert Brick Name Here)")
+                
+                let process = Image_Processing()
+
+                let fieldName = process.results().0
+                let info = process.results().1
+                
+                //Text("(Insert Brick Name Here Testing)")
+                Text("\(fieldName) and \(info)")
                 
                 Spacer()
                 
