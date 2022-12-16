@@ -117,7 +117,7 @@ class Image_Processing {
     // Results
     func results() -> (String, String) {
         // Pass the image to TensorFlow Lite to perform inference.
-        let img_path = "IMG_0676"
+        let img_path = "IMG_0676.jpeg"
         
         guard imageClassificationHelper != nil
         else { fatalError("Model initialization failed.") }
