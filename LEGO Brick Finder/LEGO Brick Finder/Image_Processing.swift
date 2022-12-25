@@ -114,7 +114,6 @@ class Image_Processing {
         resultCount: DefaultConstants.maxResults,
         scoreThreshold: DefaultConstants.scoreThreshold)
     
-    // Results
     func results() -> (String, String) {
         // Pass the image to TensorFlow Lite to perform inference.
         let img_path = "IMG_0676.jpeg"
@@ -124,21 +123,20 @@ class Image_Processing {
         
         guard imageClassificationHelper?.classify(Name: img_path) != nil
         else { fatalError("Model classification failed.") }
-    
+        
         let result = imageClassificationHelper?.classify(Name: img_path)
         
         var fieldName: String = ""
         var info: String = ""
         
-        
-        guard let count = result?.classifications.categories.count, count > 1
+        guard let count = result?.classifications.categories.count, count > 0
         else {
             fieldName = "No Results"
             info = "N/A"
             return (fieldName, info)
         }
         
-        guard let category = result?.classifications.categories[2]
+        guard let category = result?.classifications.categories[0]
         else {
             fatalError("Failed to extract results")
         }
