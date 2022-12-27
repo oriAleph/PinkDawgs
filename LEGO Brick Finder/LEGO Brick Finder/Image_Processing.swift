@@ -1,12 +1,12 @@
 /*
     Image_Processing.swift
-    Adapted TFLite Image Classification iOS Example Application
-    
-    TFLite Inference - the process of running a model on-device in order to provide predictions based on input data.
+    Adapted from the TFLite Image Classification iOS Example Application code.
  
-    TFLite Interpreter - to perform an inference with a model it must be run through an interpreter, which is made to minimize load, initialization, and execution delay.
+    TFLite Inference - the process of running a TensorFlow Lite model on-device to provide predictions based on input data.
  
-    ImageClassifier API - from the TensorFlow Lite Task Library, it has useful features that helps deploy custom image classifiers on mobile apps.
+    TFLite Interpreter - the model must be run through an interpreter that minimizes load, initialization, and execution delay for the inference.
+ 
+    ImageClassifier API - from the TensorFlow Lite Task Library, it has useful features that help deploy custom image classifiers on mobile apps.
     
     References:
     https://www.tensorflow.org/lite/guide/inference
@@ -29,18 +29,12 @@ struct ImageClassificationResult {
 /// Model file information
 typealias FileInfo = (name: String, extension: String)
 
-/// This class handles all data preprocessing and makes calls to run inference on a given frame
-/// by invoking the TFLite `ImageClassifier`. It then returns the top N results for a successful
-/// inference.
+/// Handles data preprocessing and runs inference on a given image by invoking the
+/// TFLite `ImageClassifier`. It then returns the top N results for a successful inference.
 class ImageClassificationHelper {
-    
-    // MARK: - Model Parameters
     
     /// TensorFlow Lite `Interpreter` object for performing inference on a given model.
     private var classifier: ImageClassifier
-    
-    /// Information about the alpha component in RGBA data.
-    private let alphaComponent = (baseOffset: 4, moduloRemainder: 3)
     
     // MARK: - Initialization
     

@@ -1,9 +1,4 @@
-//
-//  Result_Screen.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 10/15/22.
-//
+// Result_Screen.swift
 
 import Foundation
 import SwiftUI
@@ -16,26 +11,27 @@ struct Result_View: View {
         {
             VStack
             {
+                // MARK: - Inference
+                let process = Image_Processing()
+
+                let fieldName = process.results().0
+                let info = process.results().1
+                
+                // MARK: - Display
                 Spacer()
                 
                 Text("Name:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
                 
-                let process = Image_Processing()
-
-                let fieldName = process.results().0
-                let info = process.results().1
-                
-                //Text("(Insert Brick Name Here Testing)")
-                Text("\(fieldName) and \(info)")
+                Text("\(fieldName) - \(info)")
                 
                 Spacer()
                 
                 Text("Color:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
-                Text("(Insert Color Name Here)")
+                Text("(Insert Color and Score Here)")
                 
                 Spacer()
             }
