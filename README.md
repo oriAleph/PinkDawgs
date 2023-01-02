@@ -1,6 +1,6 @@
 # :mag:  LEGO Brick Finder Project
 
->The purpose of this project is to develop an iOS application that can make it easier for someone who is visually impaired to identify the type and color of an individual LEGO brick that they might need for their LEGO set/project.
+>The purpose of this project is to develop an iOS application that can make it easier for someone who is visually impaired to identify the type and color of an individual LEGO brick that they might need for their LEGO set.
 <br /> <br />
 
 ![image](https://github.com/oriAleph/PinkDawgs/blob/main/demo.png)
@@ -34,9 +34,21 @@ Xcode command-line tools
 <br /> <br />
 
 #### ~ Coding Notebooks ~
-Google Colab is preferred
-<br />Install any dependencies asked for when running the Installation and Import sections
-<br /> <br /> <br /> <br /> 
+<br /> Install any dependencies asked for when running the Installation and Import sections
+<br /> Jupyter Notebooks was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook. A python virtual environment was created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
+  1. Create a new virtual environment: 
+  <br /> `python -m venv tfod`
+  2. Activate your virtual environment: 
+  <br /> `source tfod/bin/activate` - Linux 
+  <br /> `.\tfod\Scripts\activate` - Windows
+  3. Install dependencies and add the virtual environment to the Python Kernel: 
+  <br /> `python -m pip install --upgrade pip` 
+  <br /> `pip install ipykernel` 
+  <br /> `python -m ipykernel install --user --name=tfod`
+  4. Launch jupyter: 
+  <br /> `jupyter notebook`
+
+<br /> <br />
 
 ### Build and Run
 
@@ -65,7 +77,7 @@ Google Colab is preferred
 
 * [TensorFlow Lite Model Maker](https://www.tensorflow.org/lite/models/modify/model_maker) is a library that simplifies TFLite model training for a custom dataset.
 
-* In this project, we use the Model Maker to train and export our TFLite model. The current model architecture used for transfer learning is [EfficientNet-Lite0](https://tfhub.dev/tensorflow/efficientnet/lite0/classification/2), which is trained on the [Imagenet 2012](https://www.tensorflow.org/datasets/catalog/imagenet2012) data set (images are organized based on WordNet ordering). EfficientNet is a convolutional neural network architecture that was first published in 2019 in [this paper](https://arxiv.org/abs/1905.11946), and you can view comparisons on performance and accuracy between the different EfficientNet-Lite models [here](https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/lite/README.md). 
+* We use the Model Maker to train and export our TFLite model. The current model architecture used for transfer learning is [EfficientNet-Lite0](https://tfhub.dev/tensorflow/efficientnet/lite0/classification/2), which is trained on the [Imagenet 2012](https://www.tensorflow.org/datasets/catalog/imagenet2012) data set (images are organized based on WordNet ordering). EfficientNet is a convolutional neural network architecture that was first published in 2019 in [this paper](https://arxiv.org/abs/1905.11946), and you can view comparisons on performance and accuracy between the different EfficientNet-Lite models [here](https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/lite/README.md). 
 
 * The dataset I am currently using is from [Joost Hazelzet’s Images of 50 LEGO Bricks Kaggle Dataset](https://www.kaggle.com/datasets/joosthazelzet/lego-brick-images), which has 40,000 images of 50 LEGO bricks rendered in 800 different angles and provides documentation on how to create more. 
 
