@@ -35,8 +35,8 @@ Xcode command-line tools
 
 #### ~ Coding Notebooks ~
 <br /> Install any dependencies asked for when running the Installation and Import sections
-<br /> Jupyter Notebooks was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
-<br /> A python virtual environment was created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
+<br /> Google Colab was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
+<br /> If Jupyter Notebooks is used instead, a python virtual environment can be created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
 <br /> <br />  If you are using an Intel chip ->
   <br /> 
   1. Create a new virtual environment: 
