@@ -39,14 +39,14 @@
 - If Jupyter Notebooks is used instead, a python virtual environment can be created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
 <br /><br />
   1. Create a new virtual environment: 
-  <br /> `python -m venv tfod`
+  <br /> `python -m venv brick`
   2. Activate your virtual environment: 
-  <br /> `source tfod/bin/activate` - Linux 
-  <br /> `.\tfod\Scripts\activate` - Windows
+  <br /> `source brick/bin/activate` - Linux 
+  <br /> `.\brick\Scripts\activate` - Windows
   3. Install dependencies and add the virtual environment to the Python Kernel: 
   <br /> `python -m pip install --upgrade pip` 
   <br /> `pip install ipykernel` 
-  <br /> `python -m ipykernel install --user --name=tfod`
+  <br /> `python -m ipykernel install --user --name=brick`
   4. Launch jupyter: 
   <br /> `jupyter notebook`
 <br /> <br />
