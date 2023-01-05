@@ -35,10 +35,9 @@
 
 #### ~ Coding Notebooks ~
 - Install any dependencies asked for when running the Installation and Import sections
-- Google Colab was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
+- Google Colab and Jupyter Notebooks were used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
 - If Jupyter Notebooks is used instead, a python virtual environment can be created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
-<br /> <br />  If you are using an Intel chip ->
-  <br /> 
+<br /><br />
   1. Create a new virtual environment: 
   <br /> `python -m venv tfod`
   2. Activate your virtual environment: 
@@ -50,10 +49,6 @@
   <br /> `python -m ipykernel install --user --name=tfod`
   4. Launch jupyter: 
   <br /> `jupyter notebook`
-  
-  <br /> If you are using an M1 chip ->
-  <br /> Please refer to this tutorial: [Installing TensorFlow on the M1 Mac](https://towardsdatascience.com/installing-tensorflow-on-the-m1-mac-410bb36b776)
-
 <br /> <br />
 
 ### Build and Run
