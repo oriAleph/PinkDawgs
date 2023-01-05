@@ -10,13 +10,13 @@
 
 - [:star: Installation](#installation)
   - [:sparkles: Requirements](#requirements)
-    - [:cherry_blossom: iOS Application](#ios-application)
-    - [:cherry_blossom: Coding Notebooks](#coding-notebooks)
+    - :cherry_blossom: iOS Application
+    - :cherry_blossom: Coding Notebooks
   - [:sparkles: Build and Run](#build-and-run)
 - [:star: Project Components](#project-components)
   - [:sparkles: Building the Models](#building-the-models)
-    - [:hibiscus: LEGO Type](#lego-type)
-    - [:hibiscus: LEGO Color](#lego-color)
+    - :hibiscus: LEGO Type
+    - :hibiscus: LEGO Color
   - [:sparkles: Accessibility Features](#accessibility-features)
   - [:sparkles: Database](#database)
 <br /> <br /> <br />
@@ -25,18 +25,18 @@
 ### Requirements
 
 #### ~ iOS Application ~
-Xcode 13.0 or above
-Valid Apple Developer ID
-Xcode command-line tools 
-[CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to manage Xcode library dependencies (run `sudo gem install cocoapods`)
-<br /> A device with iOS 12.0 or above to test the camera feature. If not available, then use one of the iPhone simulators.
-<br /> If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f)
+- Xcode 13.0 or above
+- Valid Apple Developer ID
+- Xcode command-line tools 
+- [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to manage Xcode library dependencies (run `sudo gem install cocoapods`)
+- A device with iOS 12.0 or above to test the camera feature. If not available, then use one of the iPhone simulators.
+- If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f)
 <br /> <br />
 
 #### ~ Coding Notebooks ~
-<br /> Install any dependencies asked for when running the Installation and Import sections
-<br /> Google Colab was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
-<br /> If Jupyter Notebooks is used instead, a python virtual environment can be created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
+- Install any dependencies asked for when running the Installation and Import sections
+- Google Colab was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
+- If Jupyter Notebooks is used instead, a python virtual environment can be created and added to the Python Kernel. If you want to create your own, please follow the below instructions:
 <br /> <br />  If you are using an Intel chip ->
   <br /> 
   1. Create a new virtual environment: 
@@ -83,11 +83,9 @@ Xcode command-line tools
 
 * [TensorFlow Lite Model Maker](https://www.tensorflow.org/lite/models/modify/model_maker) is a library that simplifies TFLite model training for a custom dataset.
 
-* We use the Model Maker to train and export our TFLite model. The current model architecture used for transfer learning is [EfficientNet-Lite0](https://tfhub.dev/tensorflow/efficientnet/lite0/classification/2), which is trained on the [Imagenet 2012](https://www.tensorflow.org/datasets/catalog/imagenet2012) data set (images are organized based on WordNet ordering). EfficientNet is a convolutional neural network architecture that was first published in 2019 in [this paper](https://arxiv.org/abs/1905.11946), and you can view comparisons on performance and accuracy between the different EfficientNet-Lite models [here](https://github.com/tensorflow/tpu/blob/master/models/official/efficientnet/lite/README.md). 
+* To run the custom model inference in iOS I use the [ImageClassifier API](https://www.tensorflow.org/lite/inference_with_metadata/task_library/image_classifier) from the [TensorFlow Lite Task Library](https://www.tensorflow.org/lite/inference_with_metadata/task_library/overview).
 
 * The dataset I am currently using is from [Joost Hazelzet’s Images of 50 LEGO Bricks Kaggle Dataset](https://www.kaggle.com/datasets/joosthazelzet/lego-brick-images), which has 40,000 images of 50 LEGO bricks rendered in 800 different angles and provides documentation on how to create more. 
-
-* To run the custom model inference in iOS I use the [ImageClassifier API](https://www.tensorflow.org/lite/inference_with_metadata/task_library/image_classifier) from the [TensorFlow Lite Task Library](https://www.tensorflow.org/lite/inference_with_metadata/task_library/overview).
 <br /> <br />
 
 #### ~ LEGO Color ~
