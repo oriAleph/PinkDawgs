@@ -15,7 +15,6 @@
 		24DC78AD29429B0900093040 /* model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 24DC78AC29429B0900093040 /* model.tflite */; };
 		54CC2EC931B6E922908992D9 /* Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153BA881C5F98F881E218796 /* Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework */; };
 		86100F7BF94ED0AADE36BFB9 /* Pods_LEGO_Brick_FinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42360BF61EB7B2DC93204152 /* Pods_LEGO_Brick_FinderTests.framework */; };
-		DC03DA8829822B4A000534F8 /* sample.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = DC03DA8729822B4A000534F8 /* sample.jpeg */; };
 		EA3DFF0385A74444452E0AC2 /* Pods_LEGO_Brick_Finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597547FC2CDE633591A774EC /* Pods_LEGO_Brick_Finder.framework */; };
 		FF050D7429212FC20070C5E7 /* Splash_Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF050D7329212FC20070C5E7 /* Splash_Screen.swift */; };
 		FF1EC68528FC8316003CA9C5 /* Show_All.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1EC68428FC8316003CA9C5 /* Show_All.swift */; };
@@ -66,7 +65,6 @@
 		597547FC2CDE633591A774EC /* Pods_LEGO_Brick_Finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LEGO_Brick_Finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CC17E30782401E0FA09311B /* Pods-LEGO Brick Finder-LEGO Brick FinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEGO Brick Finder-LEGO Brick FinderUITests.release.xcconfig"; path = "Target Support Files/Pods-LEGO Brick Finder-LEGO Brick FinderUITests/Pods-LEGO Brick Finder-LEGO Brick FinderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7E343262F9BF669FCFF6DC7A /* Pods-LEGO Brick FinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LEGO Brick FinderTests.debug.xcconfig"; path = "Target Support Files/Pods-LEGO Brick FinderTests/Pods-LEGO Brick FinderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DC03DA8729822B4A000534F8 /* sample.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpeg; sourceTree = "<group>"; };
 		FF050D7329212FC20070C5E7 /* Splash_Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash_Screen.swift; sourceTree = "<group>"; };
 		FF1EC68428FC8316003CA9C5 /* Show_All.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show_All.swift; sourceTree = "<group>"; };
 		FF1EC68628FC8AB0003CA9C5 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -184,7 +182,6 @@
 				FF1EC68428FC8316003CA9C5 /* Show_All.swift */,
 				FFF8B22D28FB440E005EA167 /* Result_Screen.swift */,
 				FFF8B22928FB4152005EA167 /* Image_Processing.swift */,
-				DC03DA8729822B4A000534F8 /* sample.jpeg */,
 				2457402B29488D7900F4DB62 /* Models */,
 				FF211C9628F89E9E0043B5E8 /* Assets.xcassets */,
 				FF211C9828F89E9E0043B5E8 /* Preview Content */,
@@ -326,7 +323,6 @@
 			files = (
 				2457403229488D7900F4DB62 /* efficientnet_lite3.tflite in Resources */,
 				2457403629488D7900F4DB62 /* efficientnet_lite2.tflite in Resources */,
-				DC03DA8829822B4A000534F8 /* sample.jpeg in Resources */,
 				FF211C9A28F89E9E0043B5E8 /* Preview Assets.xcassets in Resources */,
 				2457403729488D7900F4DB62 /* efficientnet_lite0.tflite in Resources */,
 				FF211C9728F89E9E0043B5E8 /* Assets.xcassets in Resources */,
