@@ -73,7 +73,8 @@ class ImageClassificationHelper {
         
         // Convert the input image to MLImage
         guard let image = UIImage (named: Name),
-              let mlImage = MLImage(image: image) else { return nil }
+              let mlImage = MLImage(image: image)
+        else { fatalError("Image to MLImage conversion failed") }
         
         // Run inference using the `ImageClassifier` object.
         do {

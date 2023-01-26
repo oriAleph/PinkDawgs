@@ -50,10 +50,10 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
          
         if let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL{
                 let imgName = imgUrl.lastPathComponent
-                //let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
-                //let localPath = documentDirectory?.appending(imgName)
-                //img_name = localPath ?? "sample.jpeg"
-                img_name = imgName
+                let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+                let localPath = documentDirectory?.appending(imgName)
+                img_name = localPath ?? "sample.jpeg"
+                //img_name = imgName
         }
         
     }
