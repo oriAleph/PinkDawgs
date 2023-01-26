@@ -1,9 +1,4 @@
-//
 //  Splash_Screen.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 11/13/22.
-//
 
 import Foundation
 import SwiftUI

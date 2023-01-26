@@ -4,7 +4,6 @@ import Foundation
 import SwiftUI
 import UIKit
 
-
 struct Result_View: View {
     var body: some View {
         ZStack
@@ -13,7 +12,6 @@ struct Result_View: View {
             {
                 // MARK: - Inference
                 let process = Image_Processing()
-
                 let fieldName = process.results().0
                 let info = process.results().1
                 
@@ -28,10 +26,10 @@ struct Result_View: View {
                 
                 Spacer()
                 
-                Text("Color:")
+                Text("Image Name:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
-                Text("(Insert Color and Score Here)")
+                Text("\(img_name)")
                 
                 Spacer()
             }

@@ -1,14 +1,8 @@
-//
 //  Upload_Image.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 10/15/22.
-//
 
 import Foundation
 import SwiftUI
 import UIKit
-
 
 struct Upload_Image_View: View {
     @State private var image: Image? = Image("camera")

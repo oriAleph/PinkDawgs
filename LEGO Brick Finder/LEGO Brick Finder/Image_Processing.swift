@@ -88,7 +88,6 @@ class ImageClassificationHelper {
             return nil
         }
     }
-
 }
 
 
@@ -110,7 +109,8 @@ class Image_Processing {
     
     func results() -> (String, String) {
         // Pass the image to TensorFlow Lite to perform inference.
-        let img_path = "IMG_0676.jpeg"
+        let img_path = "sample.jpeg"
+        //let img_path = img_name
         
         guard imageClassificationHelper != nil
         else { fatalError("Model initialization failed.") }
@@ -120,8 +120,8 @@ class Image_Processing {
         
         let result = imageClassificationHelper?.classify(Name: img_path)
         
-        var fieldName: String = ""
-        var info: String = ""
+        var fieldName: String = ""  // LEGO name
+        var info: String = ""       // LEGO accuracy
         
         guard let count = result?.classifications.categories.count, count > 0
         else {

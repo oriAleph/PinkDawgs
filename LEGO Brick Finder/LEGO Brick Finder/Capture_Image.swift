@@ -1,14 +1,11 @@
-//
 //  Capture_Image.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 10/15/22.
-//
 
 import Foundation
 import SwiftUI
 import UIKit
 
+/// Deafult image path
+var img_name = "sample.jpeg"
 
 struct SUImagePickerView: UIViewControllerRepresentable {
     
@@ -48,6 +45,17 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
             self.image = Image(uiImage: image)
         }
         self.isPresented = false
+        
+        // MARK: - Image Path
+         
+        if let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL{
+                let imgName = imgUrl.lastPathComponent
+                //let documentDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+                //let localPath = documentDirectory?.appending(imgName)
+                //img_name = localPath ?? "sample.jpeg"
+                img_name = imgName
+        }
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

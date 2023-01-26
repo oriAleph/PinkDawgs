@@ -1,36 +1,7 @@
-//
 //  Search.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 10/16/22.
-//
 
 import Foundation
 import SwiftUI
-
-/*
-struct Search_View: View {
-    let countries = ["Afghanistan", "Albania", "Algeria", "Angola", "Argentia", "Armenia", "Australia", "Austria"]
-
-    @State private var searchString = ""
-    
-    var body: some View {
-        ZStack
-        {
-            VStack
-            {
-                List {
-                    ForEach(searchString == "" ? countries: countries.filter { $0.contains(searchString)}, id: \.self) { country in
-                                    Text(country)
-                                }
-                            }
-                            .searchable(text: $searchString)
-            }
-            .navigationBarTitle("Search", displayMode: .inline)
-        }
-    }
-}
-*/
 
 struct Search_View: View {
     

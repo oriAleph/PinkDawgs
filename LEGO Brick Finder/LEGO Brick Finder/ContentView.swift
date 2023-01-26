@@ -1,9 +1,4 @@
-//
 //  ContentView.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 10/13/22.
-//
 
 import SwiftUI
 
@@ -15,11 +10,6 @@ struct ContentView: View {
             {
                 VStack
                 {
-                   // Text("LEGO Brick Finder")
-                   //     .font(.system(size: 20, weight: .bold,
-                   //                   design: .default))
-                   //     .padding([.top], 50)
-                   //     .padding([.bottom], 40)
                     
                     NavigationLink(destination: Capture_Image_View())
                     {
@@ -131,10 +121,3 @@ struct ContentView: View {
     }
 }
 
-/*
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-*/
