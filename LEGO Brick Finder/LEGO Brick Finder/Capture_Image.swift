@@ -1,5 +1,4 @@
 //  Capture_Image.swift
-
 import Foundation
 import SwiftUI
 import UIKit

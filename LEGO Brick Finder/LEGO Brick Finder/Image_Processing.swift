@@ -75,6 +75,7 @@ class ImageClassificationHelper {
         guard let image = UIImage (named: Name),
               let mlImage = MLImage(image: image)
         else { fatalError("Image to MLImage conversion failed") }
+         
         
         // Run inference using the `ImageClassifier` object.
         do {
@@ -111,7 +112,6 @@ class Image_Processing {
     func results() -> (String, String) {
         // Pass the image to TensorFlow Lite to perform inference.
         let img_path = "sample.jpeg"
-        //let img_path = img_name
         
         guard imageClassificationHelper != nil
         else { fatalError("Model initialization failed.") }
@@ -151,13 +151,15 @@ class Image_Processing {
 // MARK: Default Constants
 enum DefaultConstants {
   static let maxResults = 1
-  static let scoreThreshold: Float = 0.2
+  static let scoreThreshold: Float = 0.1
   static let model: ModelType = .model
 }
 
 // MARK: TFLite model types
 enum ModelType: CaseIterable {
     case model
+    case model3
+    case automl
     case efficientnetLite0
     case efficientnetLite1
     case efficientnetLite2
@@ -168,6 +170,10 @@ enum ModelType: CaseIterable {
         switch self {
         case .model:
             return FileInfo("model", "tflite")
+        case .model3:
+            return FileInfo("model3", "tflite")
+        case .automl:
+            return FileInfo("automl", "tflite")
         case .efficientnetLite0:
             return FileInfo("efficientnet_lite0", "tflite")
         case .efficientnetLite1:
@@ -185,6 +191,10 @@ enum ModelType: CaseIterable {
         switch self {
         case .model:
             return "Model"
+        case .model3:
+            return "Model3"
+        case .automl:
+            return "AutoMl"
         case .efficientnetLite0:
             return "EfficientNet-Lite0"
         case .efficientnetLite1:
