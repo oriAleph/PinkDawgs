@@ -29,6 +29,7 @@
 		FF211CA428F89E9F0043B5E8 /* LEGO_Brick_FinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF211CA328F89E9F0043B5E8 /* LEGO_Brick_FinderTests.swift */; };
 		FF211CAE28F89E9F0043B5E8 /* LEGO_Brick_FinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF211CAD28F89E9F0043B5E8 /* LEGO_Brick_FinderUITests.swift */; };
 		FF211CB028F89E9F0043B5E8 /* LEGO_Brick_FinderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF211CAF28F89E9F0043B5E8 /* LEGO_Brick_FinderUITestsLaunchTests.swift */; };
+		FF43B9C3299C41DD000857FB /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF43B9C2299C41DD000857FB /* ImagePicker.swift */; };
 		FFF8B22628FB2193005EA167 /* Capture_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8B22528FB2193005EA167 /* Capture_Image.swift */; };
 		FFF8B22828FB2F25005EA167 /* Upload_Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8B22728FB2F25005EA167 /* Upload_Image.swift */; };
 		FFF8B22A28FB4152005EA167 /* Image_Processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF8B22928FB4152005EA167 /* Image_Processing.swift */; };
@@ -84,6 +85,7 @@
 		FF211CA928F89E9F0043B5E8 /* LEGO Brick FinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LEGO Brick FinderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF211CAD28F89E9F0043B5E8 /* LEGO_Brick_FinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEGO_Brick_FinderUITests.swift; sourceTree = "<group>"; };
 		FF211CAF28F89E9F0043B5E8 /* LEGO_Brick_FinderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEGO_Brick_FinderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FF43B9C2299C41DD000857FB /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FFF8B22528FB2193005EA167 /* Capture_Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capture_Image.swift; sourceTree = "<group>"; };
 		FFF8B22728FB2F25005EA167 /* Upload_Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_Image.swift; sourceTree = "<group>"; };
 		FFF8B22928FB4152005EA167 /* Image_Processing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image_Processing.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				FF211C9428F89E9D0043B5E8 /* ContentView.swift */,
 				FFF8B22528FB2193005EA167 /* Capture_Image.swift */,
 				FFF8B22728FB2F25005EA167 /* Upload_Image.swift */,
+				FF43B9C2299C41DD000857FB /* ImagePicker.swift */,
 				FF1EC68628FC8AB0003CA9C5 /* Search.swift */,
 				FF1EC68428FC8316003CA9C5 /* Show_All.swift */,
 				FFF8B22D28FB440E005EA167 /* Result_Screen.swift */,
@@ -441,6 +444,7 @@
 				FF211C9528F89E9D0043B5E8 /* ContentView.swift in Sources */,
 				FFF8B22A28FB4152005EA167 /* Image_Processing.swift in Sources */,
 				FF1EC68728FC8AB0003CA9C5 /* Search.swift in Sources */,
+				FF43B9C3299C41DD000857FB /* ImagePicker.swift in Sources */,
 				FF211C9328F89E9D0043B5E8 /* LEGO_Brick_FinderApp.swift in Sources */,
 				FF1EC68528FC8316003CA9C5 /* Show_All.swift in Sources */,
 			);
@@ -602,7 +606,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEGO Brick Finder/Preview Content\"";
-				DEVELOPMENT_TEAM = 544L95W3US;
+				DEVELOPMENT_TEAM = M57S9JU6M8;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -636,7 +640,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEGO Brick Finder/Preview Content\"";
-				DEVELOPMENT_TEAM = 544L95W3US;
+				DEVELOPMENT_TEAM = M57S9JU6M8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) camera use";
