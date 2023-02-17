@@ -31,7 +31,6 @@
 - [Git Large File Storage](https://git-lfs.com/) (run `brew install git-lfs`)
 - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) to manage Xcode library dependencies (run `sudo gem install cocoapods`)
 - A device with iOS 12.0 or above to test the camera feature. If not available, then use one of the iPhone simulators.
-- If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f)
 <br /> <br />
 
 #### ~ Coding Notebooks ~
@@ -46,6 +45,12 @@
 3. Open the project in Xcode with this command: `open LEGO\ Brick\ Finder.xcworkspace`
 4. Select the `LEGO Brick Finder` project and under the `Signing & Capabilities` section select development team.
 5. If an iOS device is connected for the build, make sure to grant developer permissions.
+- If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f)
+- If you’re receiving the “building for iOS Simulator-x86_64 but attempting to link with file built for unknown-unsupported file format ( 0x76 0x65 0x72 0x73 0x69 0x6F 0x6E 0x20 0x68 0x74 0x74 0x70 0x73 0x3A 0x2F 0x2F )” error, please do the following steps:
+  1. Install git-lfs
+  2. Delete pods **folder**
+  3. Clean pod cache `pod cache clean --all`
+  4. Install pod `pod install`
 <br /> <br /> <br />
 
 ## Project Components
