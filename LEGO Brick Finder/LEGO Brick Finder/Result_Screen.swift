@@ -26,10 +26,10 @@ struct Result_View: View {
                 
                 Spacer()
                 
-                Text("Image Name:")
+                Text("Color:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
-                Text("\(img_name)")
+                Text("[none]")
                 
                 Spacer()
             }

@@ -1,12 +1,10 @@
-//
 //  ImagePicker.swift
-//  LEGO Brick Finder
-//
-//  Created by 00000000 on 2/14/23.
-//
 
 import UIKit
 import SwiftUI
+
+/// Chosen image  global variable
+var get_img: UIImage?
 
 struct ImagePicker: UIViewControllerRepresentable {
     
@@ -45,6 +43,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 parent.selectedImage = image
+                get_img = image
             }
             
             parent.presentationMode.wrappedValue.dismiss()

@@ -72,10 +72,9 @@ class ImageClassificationHelper {
     func classify(Name: String) -> ImageClassificationResult? {
         
         // Convert the input image to MLImage
-        guard let image = UIImage (named: Name),
-              let mlImage = MLImage(image: image)
+        guard let default_image = UIImage (named: Name),
+              let mlImage = MLImage(image: get_img ?? default_image)
         else { fatalError("Image to MLImage conversion failed") }
-         
         
         // Run inference using the `ImageClassifier` object.
         do {
@@ -91,9 +90,6 @@ class ImageClassificationHelper {
         }
     }
 }
-
-
-
 
 class Image_Processing {
     
