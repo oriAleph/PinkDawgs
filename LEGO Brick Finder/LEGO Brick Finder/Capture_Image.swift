@@ -4,7 +4,7 @@ import SwiftUI
 import UIKit
 
 struct Capture_Image_View: View {
-    @State private var isShowPhotoLibrary = true
+    @State private var isShowPhotoLibrary = (voiceOverEnabled == false) ? true : false
     @State private var image = UIImage()
     
     var body: some View {
@@ -18,7 +18,8 @@ struct Capture_Image_View: View {
                 .overlay(Rectangle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)
                 .padding([.top], 20)
-
+                .accessibilityHidden(true)
+            
             Spacer()
             Button(action: {self.isShowPhotoLibrary = true})
             {
@@ -39,6 +40,7 @@ struct Capture_Image_View: View {
                 .cornerRadius(10)
             }
             .padding([.bottom], 66)
+            .accessibilityHint(Text("Pulls up camera"))
             
             NavigationLink(destination: Result_View())
             {
@@ -56,8 +58,9 @@ struct Capture_Image_View: View {
                 .font(.system(size: 20, weight: .bold,
                               design: .default))
                 .cornerRadius(10)
-                .padding([.bottom], 66)
             }
+            .padding([.bottom], 66)
+            .accessibilityHint(Text("Shows Result screen"))
             
             Spacer()
             
@@ -65,7 +68,7 @@ struct Capture_Image_View: View {
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
             ImagePicker(sourceType: .camera, selectedImage: self.$image)
-        .navigationBarTitle("Capture Image", displayMode: .inline)
         }
+        .navigationBarTitle("Capture Image", displayMode: .inline)
     }
 }
