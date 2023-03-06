@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1420"
+   LastUpgradeVersion = "1300"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "21F8D0AC625B84599322A9BE6F973A0A"
-               BuildableName = "Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework"
-               BlueprintName = "Pods-LEGO Brick Finder-LEGO Brick FinderUITests"
+               BlueprintIdentifier = "FC129A3E8006753B519B45A378421C77"
+               BuildableName = "Pods_LEGO_Brick_FinderTests.framework"
+               BlueprintName = "Pods-LEGO Brick FinderTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1420"
+   LastUpgradeVersion = "1300"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C6E02334B34978796A45D1BAFBF86A66"
-               BuildableName = "TensorFlowLiteTaskVision"
-               BlueprintName = "TensorFlowLiteTaskVision"
+               BlueprintIdentifier = "21F8D0AC625B84599322A9BE6F973A0A"
+               BuildableName = "Pods_LEGO_Brick_Finder_LEGO_Brick_FinderUITests.framework"
+               BlueprintName = "Pods-LEGO Brick Finder-LEGO Brick FinderUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
