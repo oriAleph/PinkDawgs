@@ -26,9 +26,10 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .bold,
                                       design: .default))
                         .cornerRadius(10)
-                        .padding([.top], 66)
-                        .padding([.bottom], 66)
+                        
                     }
+                    .padding([.top], 66)
+                    .padding([.bottom], 66)
                     
                     NavigationLink(destination: Upload_Image_View())
                     {
@@ -45,8 +46,8 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .bold,
                                       design: .default))
                         .cornerRadius(10)
-                        .padding([.bottom], 66)
                     }
+                    .padding([.bottom], 66)
                     
                     NavigationLink(destination: Search_View())
                     {
@@ -65,8 +66,8 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .bold,
                                       design: .default))
                         .cornerRadius(10)
-                        .padding([.bottom], 66)
                     }
+                    .padding([.bottom], 66)
                     
                     NavigationLink(destination: About())
                     {
@@ -84,8 +85,8 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .bold,
                                       design: .default))
                         .cornerRadius(10)
-                        .padding([.bottom], 66)
                     }
+                    .padding([.bottom], 66)
                     
                     Button(action: {
                         if let yourURL = URL(string: "https://www.youtube.com") {
@@ -107,8 +108,8 @@ struct ContentView: View {
                         .font(.system(size: 20, weight: .bold,
                                       design: .default))
                         .cornerRadius(10)
-                        .padding([.bottom], 66)
                     }
+                    .padding([.bottom], 66)
                     
                     
                     
@@ -116,7 +117,6 @@ struct ContentView: View {
                 }
                 .navigationBarTitle("LEGO Brick Finder", displayMode: .inline)
             }
-            
         }
     }
 }

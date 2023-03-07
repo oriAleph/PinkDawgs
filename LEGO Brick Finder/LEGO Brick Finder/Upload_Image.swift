@@ -4,12 +4,14 @@ import Foundation
 import SwiftUI
 import UIKit
 
+var voiceOverEnabled = UIAccessibility.isVoiceOverRunning
+
 struct Upload_Image_View: View {
-    
-    @State private var isShowPhotoLibrary = true
+    @State private var isShowPhotoLibrary = (voiceOverEnabled == false) ? true : false
     @State private var image = UIImage()
     
     var body: some View {
+        
         VStack {
             
             Image(uiImage: self.image)
@@ -20,7 +22,8 @@ struct Upload_Image_View: View {
                 .overlay(Rectangle().stroke(Color.white, lineWidth: 4))
                 .shadow(radius: 10)
                 .padding([.top], 20)
-
+                .accessibilityHidden(true)
+            
             Spacer()
             Button(action: {self.isShowPhotoLibrary = true})
             {
@@ -41,6 +44,7 @@ struct Upload_Image_View: View {
                 .cornerRadius(10)
             }
             .padding([.bottom], 66)
+            .accessibilityHint(Text("Pulls up photos library"))
             
             NavigationLink(destination: Result_View())
             {
@@ -58,16 +62,15 @@ struct Upload_Image_View: View {
                 .font(.system(size: 20, weight: .bold,
                               design: .default))
                 .cornerRadius(10)
-                .padding([.bottom], 66)
             }
+            .padding([.bottom], 66)
+            .accessibilityHint(Text("Shows Result screen"))
             
             Spacer()
-            
-            
         }
         .sheet(isPresented: $isShowPhotoLibrary) {
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-        .navigationBarTitle("Upload Image", displayMode: .inline)
         }
+        .navigationBarTitle("Upload Image", displayMode: .inline)
     }
 }

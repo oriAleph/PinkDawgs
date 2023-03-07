@@ -20,12 +20,13 @@ struct SplashView: View {
                 Image("Splash_Brick")
                     .renderingMode(.original)
                     .frame(width: 53, height: 42)
+                    .accessibilityHidden(true)
             }
         }
         // 5.
         .onAppear {
             // 6.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.7) {
                 // 7.
                 withAnimation {
                     self.isActive = true
