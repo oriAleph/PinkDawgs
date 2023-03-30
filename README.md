@@ -45,9 +45,8 @@
 3. Open the project in Xcode with this command: `open LEGO\ Brick\ Finder.xcworkspace`
 4. Select the `LEGO Brick Finder` project, and under the `Signing & Capabilities` section, select development team.
 5. If you connect an iOS device for the build, grant developer permissions.
-<br />
-- If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f)
-- If you’re receiving the “building for iOS Simulator-x86_64 but attempting to link with file built for unknown-unsupported file format ( 0x76 0x65 0x72 0x73 0x69 0x6F 0x6E 0x20 0x68 0x74 0x74 0x70 0x73 0x3A 0x2F 0x2F )” error, please do the following steps:
+- If you’re receiving the “for architecture arm64” error, please refer to this: [Xcode building for iOS Simulator](https://stackoverflow.com/questions/63607158/xcode-building-for-ios-simulator-but-linking-in-an-object-file-built-for-ios-f) 
+- If you’re receiving the “building for iOS Simulator-x86_64 but attempting to link with file built for unknown-unsupported file format ( 0x76 0x65 0x72 0x73 0x69 0x6F 0x6E 0x20 0x68 0x74 0x74 0x70 0x73 0x3A 0x2F 0x2F )” error, please do the following steps: 
   1. Install git-lfs
   2. Delete pods **folder**
   3. Clean pod cache `pod cache clean --all`
@@ -56,9 +55,7 @@
 
 ## Project Components
 
-### Building the Models
-
-#### ~ LEGO Type ~
+### ~ LEGO Type ~
 
 * [Image Classification](https://www.tensorflow.org/lite/examples/image_classification/overview) is the task of categorizing an image with a unique class, such as labeling a picture of a flower with its type or the condition it’s in. Training this model type requires a dataset of images organized within their respective labels, aka the names of the unique classes/objects. After training, the model will be able to classify new images based on the given categories used in training.
 
@@ -76,13 +73,13 @@
 
 **[insert final data set used]**
 
-#### ~ LEGO Color ~
+### ~ LEGO Color ~
 * **[insert]**
-<br /> <br /> <br /> <br /> 
+<br /> <br /> <br />
 
-### Accessibility Features
+### ~ Accessibility Features ~
 
 * Text-to-speech
 * Contrast
 * Device accessibility integration 
-<br /> <br />  <br />
+<br /> <br />
