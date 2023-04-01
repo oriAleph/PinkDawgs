@@ -7,7 +7,7 @@ import UIKit
 var voiceOverEnabled = UIAccessibility.isVoiceOverRunning
 
 struct Upload_Image_View: View {
-    @State private var isShowPhotoLibrary = (voiceOverEnabled == false) ? true : false
+    @State private var isShowPhotoLibrary = false
     @State private var image = UIImage()
     
     var body: some View {
@@ -72,5 +72,14 @@ struct Upload_Image_View: View {
             ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
         }
         .navigationBarTitle("Upload Image", displayMode: .inline)
+        .onAppear {
+            // 6.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                // 7.
+                withAnimation {
+                    self.isShowPhotoLibrary = true
+                }
+            }
+        }
     }
 }
