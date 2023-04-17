@@ -96,7 +96,7 @@ class Image_Processing {
     // MARK: Instance Variables
     private var maxResults = DefaultConstants.maxResults
     private var scoreThreshold = DefaultConstants.scoreThreshold
-    private var model: ModelType = .model
+    private var model: ModelType = .automl50
     
     // MARK: Run Inference
     private var imageClassificationHelper: ImageClassificationHelper? =
@@ -148,7 +148,7 @@ class Image_Processing {
 enum DefaultConstants {
   static let maxResults = 1
   static let scoreThreshold: Float = 0.1
-  static let model: ModelType = .model
+  static let model: ModelType = .automl50
 }
 
 // MARK: TFLite model types
@@ -156,6 +156,7 @@ enum ModelType: CaseIterable {
     case model
     case model3
     case automl
+    case automl50
     case efficientnetLite0
     case efficientnetLite1
     case efficientnetLite2
@@ -169,6 +170,8 @@ enum ModelType: CaseIterable {
         case .model3:
             return FileInfo("model3", "tflite")
         case .automl:
+            return FileInfo("automl", "tflite")
+        case .automl50:
             return FileInfo("automl", "tflite")
         case .efficientnetLite0:
             return FileInfo("efficientnet_lite0", "tflite")
@@ -190,6 +193,8 @@ enum ModelType: CaseIterable {
         case .model3:
             return "Model3"
         case .automl:
+            return "AutoMl"
+        case .automl50:
             return "AutoMl"
         case .efficientnetLite0:
             return "EfficientNet-Lite0"
