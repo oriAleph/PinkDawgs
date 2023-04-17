@@ -1,6 +1,6 @@
 # :mag:  LEGO Brick Finder Project
 
->The purpose of this project is to develop an iOS application that can make it easier for someone who is visually impaired to identify the type and color of an individual LEGO brick that they might need for their LEGO set.
+>This project aims to develop an iOS application that can make it easier for visually impaired people to identify the type and color of an individual LEGO brick they might need for their LEGO set.
 <br /> <br />
 
 ![image](https://github.com/oriAleph/PinkDawgs/blob/main/demo.png)
@@ -18,7 +18,6 @@
     - :hibiscus: LEGO Type
     - :hibiscus: LEGO Color
   - [:sparkles: Accessibility Features](#accessibility-features)
-  - [:sparkles: Database](#database)
 <br /> <br /> <br />
 
 ## Installation
@@ -34,7 +33,7 @@
 <br /> <br />
 
 #### ~ Coding Notebooks ~
-- Google Colab was used to run the **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook.
+- Google Colab was used to train the models. The **LEGO Brick Classification with TensorFlow Lite Model Maker** notebook is to train the model, and we tested it by using a Python interpreter in the **Testing_model** notebook. 
 - If you use Jupyter Notebooks instead, you can create a python virtual environment and add it to the Python Kernel. However, at the time of this writing, specific package versions needed to get the code to work are not available to install using pip on macOS. 
 <br /> <br />
 
@@ -57,13 +56,13 @@
 
 ### ~ LEGO Type ~
 
-* [Image Classification](https://www.tensorflow.org/lite/examples/image_classification/overview) is the task of categorizing an image with a unique class, such as labeling a picture of a flower with its type or the condition it’s in. Training this model type requires a dataset of images organized within their respective labels, aka the names of the unique classes/objects. After training, the model will be able to classify new images based on the given categories used in training.
+* [Image Classification](https://www.tensorflow.org/lite/examples/image_classification/overview) categorizes an image with a unique class, such as labeling a picture of a flower with its type or condition. Training this model type requires a dataset of images organized within their respective labels, aka the names of the unique classes/objects. After training, the model will be able to classify new images based on the given categories used in training. 
 
-* [Object Detection](https://machinelearningmastery.com/object-recognition-with-deep-learning/) is the process of finding the location of multiple objects in an image. To build an object detection model, you will need an annotated dataset containing the objects and their coordinate positions. 
+* [Object Detection](https://machinelearningmastery.com/object-recognition-with-deep-learning/) is the process of finding the location of multiple objects in an image. You will need an annotated dataset containing the objects and their coordinate positions to build an object detection model. 
 
-* For this project, we created an image classification model *to identify one LEGO brick at a time* within a given image. If you want to recognize multiple bricks in a given image, I recommend using an object detection model instead.
+* We created an image classification model for this project to identify one LEGO brick within a given image. If you want to recognize multiple bricks in a given image, I recommend using an object detection model instead.
 
-* To create a model that classifies LEGO brick images, a pre-trained machine learning model was leveraged to perform [transfer learning](https://machinelearningmastery.com/how-to-use-transfer-learning-when-developing-convolutional-neural-network-models/) by applying the LEGO dataset to it. There are trade-offs based on performance, accuracy, and model size when deciding which model architecture to use for training. While we do want an efficient model, the essential aspect of this project is the accuracy of the predictions.
+* A pre-trained machine learning model is the leverage to perform [transfer learning](https://machinelearningmastery.com/how-to-use-transfer-learning-when-developing-convolutional-neural-network-models/) by applying the LEGO dataset to create a model that classifies LEGO brick images. There are trade-offs based on performance, accuracy, and model size when deciding which model architecture to use for training. While we do want an efficient model, the essential aspect of this project is the accuracy of the predictions.
 
 * [TensorFlow Lite](https://www.tensorflow.org/lite/guide) provides tools for deploying models on mobile, microcontrollers, and other edge devices. We can run an inference - a model prediction - with an iOS Swift application on a device by using a TFLite model.
 
@@ -71,10 +70,12 @@
 
 * The code utilizes the [ImageClassifier API](https://www.tensorflow.org/lite/inference_with_metadata/task_library/image_classifier) from the [TensorFlow Lite Task Library](https://www.tensorflow.org/lite/inference_with_metadata/task_library/overview) to run the custom model inference in iOS.
 
-**[insert final data set used]**
+* The current model architecture for transfer learning is EfficientNet-Lite0, trained initially on the Imagenet 2012 data set.
+
+* The current model uses 20 LEGO bricks from the [447-LEGO brick dataset](https://mostwiedzy.pl/en/open-research-data/lego-bricks-for-training-classification-network,618104539639776-0) referenced in this [research paper](https://www.iccs-meeting.org/archive/iccs2022/papers/133520608.pdf).
 
 ### ~ LEGO Color ~
-* **[insert]**
+* Color Detection is to find the official color of the LEGO Brick according to the specifications given by the company. The algorithm takes into account a range of similar appearing colors. It uses a binary search to compare the red components. After populating an array of possible color candidates based on an acceptable range, it calculates each candidate's error margin. It returns the color with the smallest margin of error.
 <br /> <br /> <br />
 
 ### ~ Accessibility Features ~
@@ -82,4 +83,7 @@
 * Text-to-speech
 * Contrast
 * Device accessibility integration 
+
+The app also provides a clean UI without clutter for easy use and navigation of the app.
+Furthermore, the app includes Voice Over and Voice Command functionality, allowing more accessibility to a broader audience.
 <br /> <br />
