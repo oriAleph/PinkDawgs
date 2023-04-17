@@ -74,6 +74,8 @@
 
 * The current model uses 20 LEGO bricks from the [447-LEGO brick dataset](https://mostwiedzy.pl/en/open-research-data/lego-bricks-for-training-classification-network,618104539639776-0) referenced in this [research paper](https://www.iccs-meeting.org/archive/iccs2022/papers/133520608.pdf).
 
+* The other part of the training was using Vertex AI (available on the Google Cloud console) to automatically train ML models exported as TensorFlow Lite models for on-device use. The training followed the [AutoML Training Job](https://cloud.google.com/vertex-ai/docs/tutorials/image-recognition-automl/dataset) available on Google Cloud documentation.
+
 ### ~ LEGO Color ~
 * Color Detection is to find the official color of the LEGO Brick according to the specifications given by the company. The algorithm takes into account a range of similar appearing colors. It uses a binary search to compare the red components. After populating an array of possible color candidates based on an acceptable range, it calculates each candidate's error margin. It returns the color with the smallest margin of error.
 <br /> <br /> <br />
