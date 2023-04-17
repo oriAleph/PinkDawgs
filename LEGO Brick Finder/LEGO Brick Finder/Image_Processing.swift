@@ -96,7 +96,7 @@ class Image_Processing {
     // MARK: Instance Variables
     private var maxResults = DefaultConstants.maxResults
     private var scoreThreshold = DefaultConstants.scoreThreshold
-    private var model: ModelType = .automl50
+    private var model: ModelType = .model8
     
     // MARK: Run Inference
     private var imageClassificationHelper: ImageClassificationHelper? =
@@ -107,7 +107,7 @@ class Image_Processing {
     
     func results() -> (String, String) {
         // Pass the image to TensorFlow Lite to perform inference.
-        let img_path = "sample.jpeg"
+        let img_path = "test1.jpeg"
         
         guard imageClassificationHelper != nil
         else { fatalError("Model initialization failed.") }
@@ -148,64 +148,34 @@ class Image_Processing {
 enum DefaultConstants {
   static let maxResults = 1
   static let scoreThreshold: Float = 0.1
-  static let model: ModelType = .automl50
+  static let model: ModelType = .model8
 }
 
 // MARK: TFLite model types
 enum ModelType: CaseIterable {
-    case model
-    case model3
-    case automl
-    case automl50
+    case model8
+    case automl20_447
     case efficientnetLite0
-    case efficientnetLite1
-    case efficientnetLite2
-    case efficientnetLite3
-    case efficientnetLite4
     
     var modelFileInfo: FileInfo {
         switch self {
-        case .model:
-            return FileInfo("model", "tflite")
-        case .model3:
-            return FileInfo("model3", "tflite")
-        case .automl:
-            return FileInfo("automl", "tflite")
-        case .automl50:
-            return FileInfo("automl", "tflite")
+        case .model8:
+            return FileInfo("model8", "tflite")
+        case .automl20_447:
+            return FileInfo("automl20_447", "tflite")
         case .efficientnetLite0:
             return FileInfo("efficientnet_lite0", "tflite")
-        case .efficientnetLite1:
-            return FileInfo("efficientnet_lite1", "tflite")
-        case .efficientnetLite2:
-            return FileInfo("efficientnet_lite2", "tflite")
-        case .efficientnetLite3:
-            return FileInfo("efficientnet_lite3", "tflite")
-        case .efficientnetLite4:
-            return FileInfo("efficientnet_lite4", "tflite")
         }
     }
     
     var title: String {
         switch self {
-        case .model:
-            return "Model"
-        case .model3:
-            return "Model3"
-        case .automl:
-            return "AutoMl"
-        case .automl50:
-            return "AutoMl"
+        case .model8:
+            return "Model8"
+        case .automl20_447:
+            return "Automl20_447"
         case .efficientnetLite0:
             return "EfficientNet-Lite0"
-        case .efficientnetLite1:
-            return "EfficientNet-Lite1"
-        case .efficientnetLite2:
-            return "EfficientNet-Lite2"
-        case .efficientnetLite3:
-            return "EfficientNet-Lite3"
-        case .efficientnetLite4:
-            return "EfficientNet-Lite4"
         }
     }
 }
