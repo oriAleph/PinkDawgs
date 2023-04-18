@@ -32,7 +32,7 @@ struct Result_View: View {
                 Text("Color:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
-                Text("[none]")
+                Text("\(color)")
                 
                 Spacer()
             }
