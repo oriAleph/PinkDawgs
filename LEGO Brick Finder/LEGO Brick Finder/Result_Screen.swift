@@ -15,6 +15,9 @@ struct Result_View: View {
                 let fieldName = process.results().0
                 let info = process.results().1
                 
+                let color_obj = Color_Detection()
+                let color = color_obj.results()
+                
                 // MARK: - Display
                 Spacer()
                 
@@ -29,7 +32,7 @@ struct Result_View: View {
                 Text("Color:")
                 .font(.system(size: 30, weight: .bold,
                                            design: .default))
-                Text("[none]")
+                Text("\(color)")
                 
                 Spacer()
             }
