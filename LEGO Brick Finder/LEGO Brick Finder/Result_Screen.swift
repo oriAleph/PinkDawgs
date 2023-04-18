@@ -15,6 +15,9 @@ struct Result_View: View {
                 let fieldName = process.results().0
                 let info = process.results().1
                 
+                let color_obj = Color_Detection()
+                let color = color_obj.results()
+                
                 // MARK: - Display
                 Spacer()
                 
