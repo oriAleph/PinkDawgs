@@ -74,7 +74,7 @@ class ImageClassificationHelper {
         // Convert the input image to MLImage
         guard let default_image = UIImage (named: Name),
               let mlImage = MLImage(image: get_img ?? default_image)
-        else { fatalError("Image to MLImage conversion failed") }
+        else { return nil }
         
         // Run inference using the `ImageClassifier` object.
         do {
@@ -108,17 +108,22 @@ class Image_Processing {
     func results() -> (String, String) {
         // Pass the image to TensorFlow Lite to perform inference.
         let img_path = "test1.jpeg"
+        var fieldName: String = ""  // LEGO name
+        var info: String = ""       // LEGO accuracy
         
         guard imageClassificationHelper != nil
-        else { fatalError("Model initialization failed.") }
+        else { fieldName = "No Results"
+            info = "N/A"
+            return (fieldName, info) }
         
         guard imageClassificationHelper?.classify(Name: img_path) != nil
-        else { fatalError("Model classification failed.") }
+        else { fieldName = "No Results"
+            info = "N/A"
+            return (fieldName, info) }
         
         let result = imageClassificationHelper?.classify(Name: img_path)
         
-        var fieldName: String = ""  // LEGO name
-        var info: String = ""       // LEGO accuracy
+        
         
         guard let count = result?.classifications.categories.count, count > 0
         else {
