@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>LEGO Brick Finder.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FF211C8E28F89E9C0043B5E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF211C9E28F89E9F0043B5E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF211CA828F89E9F0043B5E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
