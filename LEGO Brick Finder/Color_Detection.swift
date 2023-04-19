@@ -30,7 +30,7 @@ class Color_Detection{
             fatalError("Couldn't access image data")
         }
         
-        let marginOfError = 20
+        let marginOfError = 10
         var colorDetected = Lego_Color()
         
         colorCollection.LoadColors()
@@ -50,7 +50,7 @@ class Color_Detection{
                     let components = (r: bytes[offset], g: bytes[offset + 1], b: bytes[offset + 2])
                     
                     //Find current pixel's index within color collection based on it's red component
-                    var redIndex = colorCollection.FindIndex(low: 0, high: colorCollection.arraySize - 1, key: Int(components.r))
+                    let redIndex = colorCollection.FindIndex(low: 0, high: colorCollection.arraySize - 1, key: Int(components.r))
                     
 //                    print("*********Index: \(redIndex)")
                     //Fill array with possible matches based on it's red component
